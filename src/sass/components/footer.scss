@@ -1,0 +1,97 @@
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+.site-footer {
+  margin-top: 96px;
+  padding: 60px 0 84px;
+  background-color: map-get($colors, 'dark');
+  color: map-get($colors, 'white');
+  font-size: 0.85em;
+
+  .footer-logo {
+    width: 91px;
+    height: 28px;
+    margin-bottom: 50px;
+  }
+
+  .footer-row {
+    align-items: flex-start;
+  }
+
+  .footer-address {
+    color: map-get($colors, 'dark-light');
+    line-height: 1.5em;
+  }
+
+  .menu-footer-menu-container {
+    .menu {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      max-height: 9em;
+      li {
+        display: block;
+        line-height: 1.5em;
+        a {
+          color: map-get($colors, 'dark-light');
+          font-weight: bold;
+          &:hover {
+            color: map-get($colors, 'grey');
+          }
+        }
+      }
+    }
+  }
+  h4 {
+    font-family: $font-family-display;
+    text-transform: lowercase;
+  }
+}
+
+.menu-social-menu-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  #social-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    margin: 0;
+    padding: 0;
+    li {
+      display: flex;
+      flex: 1;
+      & + li {
+        margin-left: 24px;
+      }
+      a {
+        background-size: 24px 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: transparent;
+        text-indent: -9999px;
+        display: flex;
+        flex: 1;
+        width: 24px;
+        height: 24px;
+        &[href^="https://facebook.com"] {
+          background-image: url('dist/images/menu-facebook.png');
+        }
+        &[href^="https://linkedin.com"] {
+          background-image: url('dist/images/menu-linkedin.png');
+        }
+        &[href^="https://instagram.com"] {
+          background-image: url('dist/images/menu-instagram.png');
+        }
+        &[id="change-language"] {
+          color: inherit;
+          text-indent: 0px;
+          width: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "vivipost-wp-theme",
+  "description": "[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)",
+  "main": "gruntfile.js",
+  "authors": [
+    "Rodrigo Rodriguez <rodrigo.rodriguez@enroute.xyz>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.7.8"
+  }
+}

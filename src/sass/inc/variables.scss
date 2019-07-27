@@ -1,0 +1,36 @@
+$font-family: 'Open Sans', Arial, sans-serif;
+$font-family-display: 'Rawline', Arial, sans-serif;
+$colors: (
+  'dark': #404040,
+  'darker': #373737,
+  'dark-light': #666666,
+  'dark-lighter': #AEAEAE,
+  'grey': #DBDEE2,
+  'grey-light': #CFCFCF,
+  'dark-blue': #001D3C,
+  'light': #9B9B9B,
+  'yellow': #E1C831,
+  'red-light': #FF8282,
+  'carrot': #FF7B22,
+  'sunlight': #FFEF82,
+  'mint': #82FFAA,
+  'background': #FFFFFF,
+  'white': #FFFFFF,
+  'orange-light': #F9B702,
+  'orange-dark': #F18001,
+  'pink-lighter': #F8F2F5,
+  'pink-light': #E988BE,
+  'pink-dark': #DC2E8F,
+  'magenta': #E35BA6
+);
+
+$a : #E35BA6;
+
+$wordpress-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+$wordpress: (
+  'dark': #23282D,
+  'dark-light': #32373C,
+  'blue': #007CBA,
+  'light': #F3F4F5,
+  'font': $wordpress-font
+)

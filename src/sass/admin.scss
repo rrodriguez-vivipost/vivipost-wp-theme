@@ -1,0 +1,82 @@
+@import 'inc/variables';
+
+.flex {
+    display: flex;
+    &-row {
+        display: flex;
+        flex-direction: row;    
+    }
+    &-col {
+        display: flex;
+        flex-direction: column;
+        & + .flex-col {
+            margin-top: 14px;
+        }    
+    }
+    &-1 {
+        display: flex;
+        flex: 1;
+    }
+}
+
+.gts__picture__image {
+	display: block;
+	cursor: pointer;
+	line-height: 100px;
+  text-align: center;
+  font-size: 13px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-family: map-get($wordpress, 'font');
+  color: map-get($wordpress, 'blue');
+  background-color: map-get($wordpress, 'light');
+}
+
+
+.gts__plain-text {
+  font-family: map-get($wordpress, 'font');
+  font-size: 13px;
+  padding: 3px 8px;
+  box-shadow: 0 0 0 transparent;
+  transition: box-shadow .1s linear;
+  border-radius: 4px;
+  border: 1px solid #8d96a0;
+}
+
+.components-toggle-control__label {
+  margin: -2px 0 0 0;
+}
+
+.gts__editor {
+  .components-base-control__field {
+      height: 297px;
+      margin-bottom: 0;
+  }
+  &.gts__preview {
+    pointer-events: none;
+  }
+  &.gts__html .components-textarea-control__input {
+    background-color: map-get($wordpress, 'dark');
+    color: map-get($colors, 'white');
+    font-family: 'Courier New', Courier, monospace;
+    height: 100%;
+    &::-webkit-input-placeholder {
+        color: map-get($colors, 'white');
+    }
+  }
+}
+
+/**
+* Hero Image
+*/
+
+.wp-block-masterkey-hero-image-block {
+  .gts__plain-text {
+    margin-top: 12px;
+  }
+  .gts__editor.gts__preview {
+    padding: 50px 40px;
+    p {
+        font-size: 0.6em;
+    }
+  }
+}

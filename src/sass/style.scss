@@ -1,0 +1,94 @@
+/*
+Theme Name: Vivipost
+Theme URI: http://roier.dev/themes/vivipost
+Author: Roier
+Author URI: http://roier.dev/
+Description: Our 2015 default theme is clean, blog-focused, and designed for clarity.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog
+Text Domain: vivipost
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import 'inc/normalize';
+@import 'inc/accessibility';
+@import 'inc/alignments';
+@import 'inc/clearings';
+
+@import 'inc/layout';
+@import 'inc/fonts';
+@import 'inc/variables';
+@import 'inc/buttons';
+// @import 'inc/books';
+
+@import 'pages/home';
+// @import 'pages/lesson';
+
+@import 'components/header';
+@import 'components/footer';
+// @import 'components/dropdown';
+// @import 'components/tag';
+
+/*--------------------------------------------------------------
+Default
+--------------------------------------------------------------*/
+
+body {
+  font-family: $font-family;
+  color: map-get($colors, 'dark');
+}
+
+a {
+  color: map-get($colors, 'yellow');
+  text-decoration: underline;
+  &.pointer {
+    cursor: pointer;
+  }
+  &.strong {
+    font-weight: bold;
+  }
+  &:hover {
+    color: map-get($colors, 'red-light');
+  }
+}
+
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+
+.site-content {
+  @extend .flex-column;
+  @extend .container;
+}
+
+.alignfull {
+	margin: 32px calc(50% - 50vw);
+	max-width: 100vw;
+	width: 100vw;
+}
+
+.wp-block-cover__inner-container {
+  @extend .flex-column;
+  @extend .container; 
+}
+
+.title {
+  font-family: $font-family-display;
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sub-title {
+  font-size: 24px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+  & + .title {
+    margin-top: 18px;
+  }
+}

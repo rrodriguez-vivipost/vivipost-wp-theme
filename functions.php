@@ -79,6 +79,14 @@ if ( ! function_exists( 'vivipost_wp_theme_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		// $wp_customize->add_setting('your_theme_hover_logo');
+		// $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'your_theme_hover_logo', array(
+		// 		'label' => 'Upload Hover Logo',
+		// 		'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+		// 		'settings' => 'your_theme_hover_logo',
+		// 		'priority' => 8 // show it just below the custom-logo
+		// )));
 	}
 endif;
 add_action( 'after_setup_theme', 'vivipost_wp_theme_setup' );
@@ -126,6 +134,10 @@ function vivipost_wp_theme_scripts() {
 
 	wp_enqueue_script( 'vivipost-wp-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
+	wp_enqueue_script( 'vivipost-wp-theme-libs', get_theme_file_uri( '/dist/js/lib.min.js' ), array(), '' );
+
+	wp_enqueue_script( 'vivipost-wp-theme-app',  get_theme_file_uri( '/dist/js/app.js' ), array(), '', true ); 
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -159,3 +171,84 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Enqueue Gutenberg block assets for backend editor.
+ */
+
+function editor_assets() {
+	wp_enqueue_script( 'vivipost-libs', get_theme_file_uri( '/dist/js/lib.min.js' ), array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), true );
+	wp_enqueue_script( 'vivipost-scripts', get_theme_file_uri( '/dist/js/admin.js' ), array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-editor' ), true );
+}
+add_action( 'enqueue_block_editor_assets', 'editor_assets' );
+
+function vivipost_block_category( $categories, $post ) {
+	return array_merge( array( array(
+		'slug' => 'vivipost',
+		'title' => __( 'Vivipost', 'vivipost' ),
+	), ), $categories );
+}
+add_filter( 'block_categories', 'vivipost_block_category', 10, 2);
+
+function admin_styles() {
+	wp_enqueue_style( 'vivipost-style', get_theme_file_uri( '/dist/css/admin.css' ), false, '1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'admin_styles' );
+
+/**
+ * Allow SVG MIME Type in Media Upload
+ *
+ * @param array $mimes Mime types keyed by the file extension regex corresponding to those types.
+*/
+function cc_mime_types( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'cc_mime_types' );
+
+/**
+ * Add social menu.
+ */
+function vivipost_menus() {
+  register_nav_menu('social-menu', __( 'Social Menu' ));
+  register_nav_menu('footer-menu', __( 'Footer Menu' ));
+}
+add_action( 'init', 'vivipost_menus' );
+
+/**
+ * Add customize section.
+ */
+function vivipost_customize_register( $wp_customize ) {
+	
+	// Footer Section
+	$wp_customize->add_section( 'footer-section', array(
+		'title'    => 'Site Footer',
+		'priority' => 20,
+	) );
+	
+	// Footer Logo
+	$wp_customize->add_setting( 'footer-logo' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'footer-logo', array(
+		'settings'   => 'footer-logo',
+		'label'      => 'Footer Image',
+		'section'    => 'footer-section',
+	) ) );
+
+	// Footer Sections
+	$wp_customize->add_setting( 'footer-address-one' );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer-address-one', array(
+		'label'          => 'Address #1',
+		'section'        => 'footer-section',
+		'settings'       => 'footer-address-one',
+		'type'           => 'textarea'
+	) ) );
+	
+	$wp_customize->add_setting( 'footer-address-two' );
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'footer-address-two', array(
+		'label'          => 'Address #2',
+		'section'        => 'footer-section',
+		'settings'       => 'footer-address-two',
+		'type'           => 'textarea'
+	) ) );
+	
+}
+add_action( 'customize_register', 'vivipost_customize_register');

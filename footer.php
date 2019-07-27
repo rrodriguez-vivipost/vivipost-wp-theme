@@ -6,31 +6,34 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package vivipost-wp-theme
+ * @package gestalabs-wp-theme
  */
 
 ?>
+		</div><!-- #content -->
 
-	</div><!-- #content -->
+		<footer id="colophon" class="site-footer">
+			<div class="flex-column container">
+				<h4>Vivipost</h4>
+				<div class="footer-row flex flex-row">
+					<div class="col-2 footer-address footer-address-one">
+						<?php if( get_theme_mod( 'footer-address-one' ) ) {
+							echo nl2br(get_theme_mod( 'footer-address-one' ));
+						} ?>
+					</div>
+					<div class="col-4">
+						<?php wp_nav_menu(array('theme_location' => 'footer-menu', 'menu_id' => 'footer-menu')); ?>
+					</div>
+					<div class="flex-1"></div>
+					<div class="col-3">
+						<?php wp_nav_menu(array('theme_location' => 'social-menu', 'menu_id' => 'social-menu' )); ?>
+					</div>
+				</div>
+			</div>
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'vivipost-wp-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'vivipost-wp-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'vivipost-wp-theme' ), 'vivipost-wp-theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+	<?php wp_footer(); ?>
 
-<?php wp_footer(); ?>
-
-</body>
+	</body>
 </html>

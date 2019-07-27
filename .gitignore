@@ -1,0 +1,10 @@
+config.json
+bower_components/
+.sass-cache
+.sass-cache/
+.DS_Store/
+node_modules/
+backups/
+package-lock.json
+.aliases
+latest.sql
