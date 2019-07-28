@@ -321,6 +321,14 @@ body.home {
         background-color: transparent;
         padding: 8px 0px;
         outline: none;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+          border: none;
+          border-bottom: 4px solid map-get($colors, 'blue-dark');
+          -webkit-text-fill-color: map-get($colors, 'white');
+          -webkit-box-shadow: 0 0 0px 1000px map-get($colors, 'blue-light') inset;
+        }
       }
 
       &.wpcf7-textarea {
