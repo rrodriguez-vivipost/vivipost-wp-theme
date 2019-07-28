@@ -52,7 +52,7 @@ a {
     font-weight: bold;
   }
   &:hover {
-    color: map-get($colors, 'red-light');
+    color: map-get($colors, 'orange-light');
   }
 }
 
@@ -63,12 +63,6 @@ Content
 .site-content {
   @extend .flex-column;
   @extend .container;
-}
-
-.alignfull {
-	margin: 32px calc(50% - 50vw);
-	max-width: 100vw;
-	width: 100vw;
 }
 
 .wp-block-cover__inner-container {
@@ -89,6 +83,6 @@ Content
   font-weight: 600;
   margin-bottom: 0;
   & + .title {
-    margin-top: 18px;
+    margin-top: 2px;
   }
 }

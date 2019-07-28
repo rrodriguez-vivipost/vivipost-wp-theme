@@ -1,27 +1,37 @@
 $font-family: 'Open Sans', Arial, sans-serif;
 $font-family-display: 'Rawline', Arial, sans-serif;
 $colors: (
-  'dark': #404040,
   'darker': #373737,
+  'dark': #404040,
   'dark-light': #666666,
   'dark-lighter': #AEAEAE,
+  'light': #9B9B9B,
+  
   'grey': #DBDEE2,
   'grey-light': #CFCFCF,
-  'dark-blue': #001D3C,
-  'light': #9B9B9B,
+  
+  'blue-lighter': #7C98AF,
+  'blue-light': #003865,
+  'blue-dark': #001D3C,
+  
+  'background': #FFFFFF,
+  'white': #FFFFFF,
+
   'yellow': #E1C831,
+  'magenta': #E35BA6,
   'red-light': #FF8282,
   'carrot': #FF7B22,
   'sunlight': #FFEF82,
   'mint': #82FFAA,
-  'background': #FFFFFF,
-  'white': #FFFFFF,
+  
   'orange-light': #F9B702,
   'orange-dark': #F18001,
-  'pink-lighter': #F8F2F5,
-  'pink-light': #E988BE,
+  'orange-button': #FE9A32,
+
   'pink-dark': #DC2E8F,
-  'magenta': #E35BA6
+  'pink-lighter': #F8F2F5,
+  'pink-light': #E988BE
+  
 );
 
 $a : #E35BA6;

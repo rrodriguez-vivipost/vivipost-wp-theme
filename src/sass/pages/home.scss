@@ -15,8 +15,10 @@ body.home {
   }
 
   .hero-subtitle-button .wp-block-button__link {
-    padding: 15px 70px;
-    font-size: 24px;
+    padding: 7px 48px;
+    font-family: $font-family-display;
+    text-transform: uppercase;
+    font-size: 14px;
     font-weight: bold;
     border-radius: 35px;
     background-color: map-get($colors, 'orange-light');
@@ -24,6 +26,7 @@ body.home {
   }
 
   .section-pink {
+    margin-top: 120px;
     background: linear-gradient(225.51deg, map-get($colors, 'pink-light') 0%, map-get($colors, 'pink-dark') 100%);
     padding: 72px 0 96px;
     .container {
@@ -275,4 +278,97 @@ body.home {
     }
   }
 
+  .contact-form {
+    background-color: map-get($colors, 'blue-light');
+    color: map-get($colors, 'white');
+    padding: 80px 0 120px;
+
+    .title {
+      line-height: 54px;
+      a {
+        color: map-get($colors, 'white');
+        &:hover {
+          color: map-get($colors, 'blue-lighter');
+        }
+      }
+    }
+    
+    label {
+      color: map-get($colors, 'blue-lighter');
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      position: relative;
+      > p {
+        width: 100%;
+        &:not(:first-of-type):not(:last-of-type):not(:nth-last-of-type(2)) {
+          width: calc(100% / 3);
+        }
+      }
+    }
+
+    .wpcf7-form-control {
+      
+      &.wpcf7-text, &.wpcf7-textarea {
+        border: none;
+        color: map-get($colors, 'white');
+        border-bottom: 4px solid map-get($colors, 'blue-dark');
+        background-color: transparent;
+        padding: 8px 0px;
+        outline: none;
+      }
+
+      &.wpcf7-textarea {
+        min-height: 80px;
+        max-height: 80px;
+        resize: none;
+      }
+
+      &.wpcf7-submit {
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        border: none;
+        border-radius: 38px;
+        background-color: map-get($colors, 'orange-button');
+        color: map-get($colors, 'white');
+        font-family: $font-family-display;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 24px;
+        text-align: center;
+        padding: 8px 36px;
+        outline: none;
+      }
+    }
+    .wpcf7-form-control-wrap {
+      .wpcf7-not-valid-tip {
+        color: map-get($colors, 'yellow');
+        margin-top: 4px;
+        padding: 1px 4px;
+        font-size: 12px;
+      }
+    }
+    .wpcf7-response-output {
+      margin: 0;
+      display: block;
+      position: absolute;
+      bottom: 110px;
+      left: calc(100%/3);
+      padding: 3px 4px;
+      border: none;
+    }
+    div.wpcf7-validation-errors {
+      color: map-get($colors, 'yellow');
+    }
+  }
+  .wpcf7.ajax-loader {
+
+  }
 }
