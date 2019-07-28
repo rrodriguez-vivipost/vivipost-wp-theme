@@ -7432,6 +7432,11 @@ body.home .contact-form {
     background-color: transparent;
     padding: 8px 0px;
     outline: none; }
+    body.home .contact-form .wpcf7-form-control.wpcf7-text:-webkit-autofill, body.home .contact-form .wpcf7-form-control.wpcf7-text:-webkit-autofill:hover, body.home .contact-form .wpcf7-form-control.wpcf7-text:-webkit-autofill:focus, body.home .contact-form .wpcf7-form-control.wpcf7-textarea:-webkit-autofill, body.home .contact-form .wpcf7-form-control.wpcf7-textarea:-webkit-autofill:hover, body.home .contact-form .wpcf7-form-control.wpcf7-textarea:-webkit-autofill:focus {
+      border: none;
+      border-bottom: 4px solid #001D3C;
+      -webkit-text-fill-color: #FFFFFF;
+      -webkit-box-shadow: 0 0 0px 1000px #003865 inset; }
   body.home .contact-form .wpcf7-form-control.wpcf7-textarea {
     min-height: 80px;
     max-height: 80px;
